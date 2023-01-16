@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>home page</title>
+        <link rel="stylesheet" href="static/output.css">
+    </head>
+    <body>
+        <div class="flex">
+            <h1 class="dark">{{data.result}}</h1>
+            <img class="pics" src={{data.pic}} id="pic" onmouseover="fun1()" onmouseout="fun2()">
+        </div>
+        <script>
+            a=document.getElementById("pic");
+            function fun1()
+            {
+                a.style.border="2px solid white"
+            } 
+            function fun2()
+            {
+                a.style.border="2px solid teal";
+            }
+        </script>
+    </body>
+</html>

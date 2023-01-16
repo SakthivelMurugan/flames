@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>home page</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div class="flex">
+            <div class="header">
+                <img class="pic" id="pic1" src="static/friends.jpg" onmouseover="fun1()" onmouseout="fun2()"></img>
+                <img class="pic" id="pic2" src="static/love.jpg" onmouseover="fun3()" onmouseout="fun4()"></img>
+                <img class="pic" id="pic3" src="static/affection.jpg" onmouseover="fun5()" onmouseout="fun6()"></img>
+                <img class="pic" id="pic4" src="static/marriage.jpg" onmouseover="fun7()" onmouseout="fun8()"></img>
+                <img class="pic" id="pic5" src="static/enemy.jpg" onmouseover="fun9()" onmouseout="fun10()"></img>
+                <img class="pic" id="pic6" src="static/siblings.jpg" onmouseover="fun11()" onmouseout="fun12()"></img>
+            </div>
+            <h1 class="dark">flames</h1>
+            <a href="/play"><button class="but" id="but" onmouseover="funone()" onmouseout="funtwo()">play game</button></a>
+        </div>
+        <script>
+            a=document.getElementById("but");
+            function funone()
+            {
+                a.style.border="2px solid white";
+            } 
+            function funtwo()
+            {
+                a.style.border="2px solid teal";
+            }
+
+            pic1=document.getElementById("pic1");
+            function fun1()
+            {
+                pic1.style.border="2px solid white"
+            } 
+            function fun2()
+            {
+                pic1.style.border="2px solid teal";
+            }
+
+            pic2=document.getElementById("pic2");
+            function fun3()
+            {
+                pic2.style.border="2px solid white"
+            } 
+            function fun4()
+            {
+                pic2.style.border="2px solid teal";
+            }
+
+            pic3=document.getElementById("pic3");
+            function fun5()
+            {
+                pic3.style.border="2px solid white"
+            } 
+            function fun6()
+            {
+                pic3.style.border="2px solid teal";
+            }
+
+            pic4=document.getElementById("pic4");
+            function fun7()
+            {
+                pic4.style.border="2px solid white"
+            } 
+            function fun8()
+            {
+                pic4.style.border="2px solid teal";
+            }
+
+            pic5=document.getElementById("pic5");
+            function fun9()
+            {
+                pic5.style.border="2px solid white"
+            } 
+            function fun10()
+            {
+                pic5.style.border="2px solid teal";
+            }
+
+            pic6=document.getElementById("pic6");
+            function fun11()
+            {
+                pic6.style.border="2px solid white"
+            } 
+            function fun12()
+            {
+                pic6.style.border="2px solid teal";
+            }
+
+
+
+        </script>
+    </body>
+</html>

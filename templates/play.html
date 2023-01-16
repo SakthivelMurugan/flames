@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js</title>
+		<link rel="stylesheet" href="static/play.css">
+	</head>
+	<body>
+        <div class="flex">
+            <form class="f" id="f1" method="post" action="/output">
+                <h1 class="d" id="d1">giveThis</h1>
+                <input class="i" id="i1" name="your" placeholder="enter your name" onmouseover="fun3()" onmouseout="fun4()"></input>
+                <input class="i" id="i2" name="crush" placeholder="enter your crush name" onmouseover="fun5()" onmouseout="fun6()"></input>
+                <input class="b" id="b1" type="submit" onmouseover="fun1()" onmouseout="fun2()"></input>
+            </form>
+            <script>
+                a=document.getElementById("b1");
+                function fun1()
+                {
+                    a.style.border="2px solid khaki"
+                } 
+                function fun2()
+                {
+                    a.style.border="2px solid teal";
+                }
+
+                b=document.getElementById("i1");
+                function fun3()
+                {
+                    b.style.border="2px solid khaki"
+                } 
+                function fun4()
+                {
+                    b.style.border="2px solid teal";
+                }
+
+                c=document.getElementById("i2");
+                function fun5()
+                {
+                    c.style.border="2px solid khaki"
+                } 
+                function fun6()
+                {
+                    c.style.border="2px solid teal";
+                }
+            </script>
+        </div>
+	</body>
+</html>

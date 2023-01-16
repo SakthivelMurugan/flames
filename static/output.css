@@ -1,0 +1,22 @@
+.flex
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:teal;
+    height:610px;
+    width:100%;
+}
+.dark
+{
+    font-size: 100px;
+    font-style: italic;
+    margin: 50px;
+    color:khaki;
+}
+.pics
+{
+    height:200px;
+    width:200px;
+}
