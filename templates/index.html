@@ -5,17 +5,25 @@
         <link rel="stylesheet" href="static/style.css">
     </head>
     <body>
-        <div class="flex">
-            <div class="header">
-                <img class="pic" id="pic1" src="static/friends.jpg" onmouseover="fun1()" onmouseout="fun2()"></img>
-                <img class="pic" id="pic2" src="static/love.jpg" onmouseover="fun3()" onmouseout="fun4()"></img>
-                <img class="pic" id="pic3" src="static/affection.jpg" onmouseover="fun5()" onmouseout="fun6()"></img>
-                <img class="pic" id="pic4" src="static/marriage.jpg" onmouseover="fun7()" onmouseout="fun8()"></img>
-                <img class="pic" id="pic5" src="static/enemy.jpg" onmouseover="fun9()" onmouseout="fun10()"></img>
-                <img class="pic" id="pic6" src="static/siblings.jpg" onmouseover="fun11()" onmouseout="fun12()"></img>
+        <div class="container">
+            <div class="profile">
+                <h1 class="text">{{username}}</h1>
+                <img class="pic" src="static/profile.jpg">
             </div>
-            <h1 class="dark">flames</h1>
-            <a href="/play"><button class="but" id="but" onmouseover="funone()" onmouseout="funtwo()">play game</button></a>
+            <div class="flex">
+                <div class="header">
+                    <img class="pic" id="pic1" src="static/friends.jpg" onmouseover="fun1()" onmouseout="fun2()"></img>
+                    <img class="pic" id="pic2" src="static/love.jpg" onmouseover="fun3()" onmouseout="fun4()"></img>
+                    <img class="pic" id="pic3" src="static/affection.jpg" onmouseover="fun5()" onmouseout="fun6()"></img>
+                    <img class="pic" id="pic4" src="static/marriage.jpg" onmouseover="fun7()" onmouseout="fun8()"></img>
+                    <img class="pic" id="pic5" src="static/enemy.jpg" onmouseover="fun9()" onmouseout="fun10()"></img>
+                    <img class="pic" id="pic6" src="static/siblings.jpg" onmouseover="fun11()" onmouseout="fun12()"></img>
+                </div>
+                <h1 class="dark">flames</h1>
+                <a href="/play"><button class="but" id="but" onmouseover="funone()" onmouseout="funtwo()">play game</button></a>
+                <a href="/playList"><button class="but" id="but1" onmouseover="funthree()" onmouseout="funfour()">play list</button></a>
+                <a href="/feedBack"><img class="fb" id="fb" src="static/feedback.jpg"></img></a>
+            </div>
         </div>
         <script>
             a=document.getElementById("but");
@@ -26,6 +34,16 @@
             function funtwo()
             {
                 a.style.border="2px solid teal";
+            }
+
+            b=document.getElementById("but1");
+            function funthree()
+            {
+                b.style.border="2px solid white";
+            } 
+            function funfour()
+            {
+                b.style.border="2px solid teal";
             }
 
             pic1=document.getElementById("pic1");

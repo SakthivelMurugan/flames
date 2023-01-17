@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>playlist</title>
+        <link rel="stylesheet" href="static/playlist.css">
+    </head>
+    <body>
+        <div class="flex">
+            <h1>play list</h1>
+            <table border="3">
+                <tr>
+                    <th>yourname</th>
+                    <th>crushname</th>
+                    <th>flames</th>
+                </tr>
+                {%for i in data%}
+                <tr>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </body>
+</html>

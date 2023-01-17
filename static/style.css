@@ -1,3 +1,24 @@
+.container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-evenly;
+    background-color:gray;
+    height:100%;
+    width:100%;
+}
+
+.profile
+{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:10%;
+}
+
 .flex
 {
     display: flex;
@@ -5,8 +26,13 @@
     justify-content: center;
     align-items: center;
     background-color:teal;
-    height:610px;
+    height:100%;
     width:100%;
+}
+
+.text
+{
+    color:white;
 }
 
 .header
@@ -18,30 +44,42 @@
     background-color:teal;
     height:100%;
     width:70%;
+    margin:30px;
 }
 
 .pic
 {
     height:100px;
     width:100px;
+    margin:20px;
 }
 
 .dark
 {
     font-size: 100px;
     font-style: italic;
-    margin: 50px;
     color:khaki;
+    margin:30px;
 }
 
 .but
 {
-    margin: 50px;
     width: 120px;
     color: teal;
     font-style: italic;
     font-size: 20px;
     border:2px solid teal;
     border-radius: 30%;
+    margin:20px;
+}
+
+.fb
+{
+    width: 140px;
+    color: teal;
+    font-style: italic;
+    font-size: 20px;
+    border:2px solid teal;
+    margin:10px;
 }
 

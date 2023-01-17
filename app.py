@@ -1,19 +1,97 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
+import sqlite3 as sql
 
 app=Flask("__name__")
+app.secret_key="sakthi25"
 
-@app.route("/")
+@app.route("/",methods=["post","get"])
+def logIn():
+    if request.form.get("username")!=None:
+        username=request.form.get("username")
+        email=request.form.get("email")
+        password=request.form.get("password")
+
+        conn=sql.connect("flames.db")
+        cur=conn.cursor()
+
+        cur.execute("select username from user")
+        data=cur.fetchall()
+
+        l=[]
+        for i in data:
+            l.append(i[0])
+
+        for i in l:
+            if i==username:
+                return redirect(url_for("signUp"))
+
+        cur.execute("insert into user (username,email,password) values (?,?,?)",(username,email,password))
+        conn.commit()
+
+    return render_template("login.html")
+
+@app.route("/signup")
+def signUp():
+    return render_template("signup.html")
+
+@app.route("/admin",methods=["post","get"])
+def adminPanel():
+    username=request.form.get("username")
+    password=request.form.get("password")
+
+    return render_template("admin.html")
+
+@app.route("/home",methods=["post","get"])
 def home():
-    return render_template("index.html")
+    username=request.form.get("username")
+    password=request.form.get("password")
+
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select username,password from user")
+    data=cur.fetchall()
+
+    for i in data:
+        if i[0]==username and i[1]==password:
+            
+            conn=sql.connect("flames.db")
+            cur=conn.cursor()
+            cur.execute("insert into loginuser (name) values (?)",(username,))
+            conn.commit()
+
+            return render_template("index.html",username=username)
+    
+    else:
+        return redirect(url_for("logIn"))
 
 @app.route("/play")
 def playGame():
     return render_template("play.html")
 
+@app.route("/playList")
+def playList():
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from loginuser")
+    data=cur.fetchall()
+    data=data[-1][0]
+
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from playlist where username=?",(data,))
+    data1=cur.fetchall()
+
+    print(data1)
+
+    return render_template("playlist.html",data=data1)
+
 @app.route("/output",methods=["post","get"])
 def outPut():
     str1=request.form.get("your")
     str2=request.form.get("crush")
+    yourname=str1
+    crushname=str2
+
     l=[]
     for i in str1:
         if i!=" ":
@@ -56,7 +134,22 @@ def outPut():
         i+=1
     result=array[0]
     dic={"result":result,"pic":pics[result]}
+
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from loginuser")
+    data=cur.fetchall()
+    username=data[-1][0]
+
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("insert into playlist (username,yourname,crushname,flames) values (?,?,?,?)",(username,yourname,crushname,result))
+    conn.commit()
     return render_template("output.html",data=dic)
+
+@app.route("/feedBack")
+def feedBack():
+    return render_template("feedback.html")
 
 
 if __name__=="__main__":

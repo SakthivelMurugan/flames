@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html>
+    <hea>
+        <title>login</title>
+        <link href="static/login.css" rel="stylesheet">
+    </hea>
+    <body>
+        <div class="container">
+            <form class="flex" method="post" action="/home">
+                <h1 class="dark">User LogIn</h1>
+                <input class="input" name="username" id="un" required="1"></input>
+                <input class="input" name="password" id="pw" required="1"></input>
+                <button type="submit">login</button>
+                <h5 class="text">don't have an account? <a href="/signup" class="but">SignUp</a></h5>
+            </form>
+
+            <form class="flex" method="post" action="/admin">
+                <h1 class="dark">Admin LogIn</h1>
+                <input class="input" name="username" id="un" required="1"></input>
+                <input class="input" name="password" id="pw" required="1"></input>
+                <button type="submit">login</button>
+            </form>
+        </div>
+    </body>
+</html>
