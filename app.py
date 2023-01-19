@@ -1,5 +1,6 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,request,redirect,url_for,flash
 import sqlite3 as sql
+import json
 
 app=Flask("__name__")
 app.secret_key="sakthi25"
@@ -23,8 +24,9 @@ def logIn():
 
         for i in l:
             if i==username:
+                flash("user already exist")
                 return redirect(url_for("signUp"))
-
+        flash("user registered successfully")
         cur.execute("insert into user (username,email,password) values (?,?,?)",(username,email,password))
         conn.commit()
 
@@ -34,12 +36,16 @@ def logIn():
 def signUp():
     return render_template("signup.html")
 
+@app.route("/adminlogin",methods=["post","get"])
+def adminLogIn():
+    return render_template("admin.html")
+
 @app.route("/admin",methods=["post","get"])
 def adminPanel():
     username=request.form.get("username")
     password=request.form.get("password")
 
-    return render_template("admin.html")
+    return render_template("adminpanel.html")
 
 @app.route("/home",methods=["post","get"])
 def home():
@@ -56,6 +62,10 @@ def home():
             
             conn=sql.connect("flames.db")
             cur=conn.cursor()
+
+            cur.execute("delete from loginuser")
+            conn.commit()
+
             cur.execute("insert into loginuser (name) values (?)",(username,))
             conn.commit()
 
@@ -80,8 +90,6 @@ def playList():
     cur=conn.cursor()
     cur.execute("select * from playlist where username=?",(data,))
     data1=cur.fetchall()
-
-    print(data1)
 
     return render_template("playlist.html",data=data1)
 
@@ -139,7 +147,7 @@ def outPut():
     cur=conn.cursor()
     cur.execute("select * from loginuser")
     data=cur.fetchall()
-    username=data[-1][0]
+    username=data[0][0]
 
     conn=sql.connect("flames.db")
     cur=conn.cursor()
@@ -151,6 +159,30 @@ def outPut():
 def feedBack():
     return render_template("feedback.html")
 
+@app.route("/thankpage")
+def thank():
+    return render_template("thank.html")
+
+@app.route("/thank",methods=["post"])
+def storeFB():
+    output = request.get_json()
+    
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from loginuser")
+    username=cur.fetchall()
+
+    username=username[0][0]
+    feedback=output.get("name")
+    emoji=output.get("path")
+
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("insert into feedback (username,feedback,emoji) values (?,?,?)",(username,feedback,emoji))
+    conn.commit()
+
+    return render_template("thank.html")
+     
 
 if __name__=="__main__":
     app.run(debug=True)

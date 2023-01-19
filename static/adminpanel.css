@@ -1,0 +1,22 @@
+.flex
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:610px;
+    width:100%;
+    background-color: gray;
+}
+.dark
+{
+    color:teal;
+    font-size: 80px;
+    font-style: italic;
+}
+.text
+{
+    color:white;
+    font-size: 40px;
+    font-style:italic;
+}

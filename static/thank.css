@@ -1,0 +1,16 @@
+.flex
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 605px;
+    width:100%;
+    background-color: pink;
+}
+.dark
+{
+    color:gray;
+    font-size: 100px;
+    font-style: italic;
+}

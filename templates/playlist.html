@@ -6,18 +6,18 @@
     </head>
     <body>
         <div class="flex">
-            <h1>play list</h1>
-            <table border="3">
+            <h1 class="dark">play list</h1>
+            <table>
                 <tr>
-                    <th>yourname</th>
-                    <th>crushname</th>
-                    <th>flames</th>
+                    <th><h1 class="dark">yourname</h1></th>
+                    <th><h1 class="dark">crushname</h1></th>
+                    <th><h1 class="dark">flames</h1></th>
                 </tr>
                 {%for i in data%}
                 <tr>
-                    <td>{{i[1]}}</td>
-                    <td>{{i[2]}}</td>
-                    <td>{{i[3]}}</td>
+                    <td><h1 class="text">{{i[1]}}</h1></td>
+                    <td><h1 class="text">{{i[2]}}</h1></td>
+                    <td><h1 class="text">{{i[3]}}</h1></td>
                 </tr>
                 {%endfor%}
             </table>

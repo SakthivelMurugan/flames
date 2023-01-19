@@ -6,4 +6,17 @@
     align-items:center;
     height:100%;
     width:100%;
+    background-color: pink;
+}
+.dark
+{
+    margin:20px;
+    color:teal;
+    font-style: italic;
+}
+.text
+{
+    margin:10px;
+    color:gray;
+    font-style: italic;
 }

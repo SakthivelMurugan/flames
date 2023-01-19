@@ -5,6 +5,100 @@
         <link rel="stylesheet" href="static/feedback.css">
     </head>
     <body>
-        <h1>success</h1>
+        <div class="container">
+            <div class="flex">
+                <h1 class="dark">Give your feedback by clicking emoji</h1>
+                <div class="header">
+                    <div class="sflex">
+                        <a href=/thankpage><img class="pic" id="pic1" src="static/excellent.png"></img></a>
+                        <h1 class="text">excellent</h1>
+                    </div>
+                    <div class="sflex">
+                        <a href=/thankpage><img class="pic" id="pic2" src="static/good.png"></img></a>
+                        <h1 class="text">good</h1>
+                    </div>
+                    <div class="sflex">
+                        <a href=/thankpage><img class="pic" id="pic3" src="static/average.png"></img></a>
+                        <h1 class="text">average</h1>
+                    </div>
+                    <div class="sflex">
+                        <a href=/thankpage><img class="pic" id="pic4" src="static/bad.png"></img></a>
+                        <h1 class="text">bad</h1>
+                    </div>
+                    <div class="sflex">
+                        <a href=/thankpage><img class="pic" id="pic5" src="static/worst.png"></img></a>
+                        <h1 class="text">worst</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script>
+                pic1=document.getElementById("pic1");
+                pic1.addEventListener("click",excellent)
+                function excellent()
+                {
+                    name="excellent"
+                    path="static/excellent.png"
+                    s={name,path}
+                    $.ajax({
+                    url:"/thank",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+                pic2=document.getElementById("pic2");
+                pic2.addEventListener("click",good)
+                function good()
+                {
+                    name="good"
+                    path="static/good.png"
+                    s={name,path}
+                    $.ajax({
+                    url:"/thank",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+                pic3=document.getElementById("pic3");
+                pic3.addEventListener("click",average)
+                function average()
+                {
+                    name="average"
+                    path="static/average.png"
+                    s={name,path}
+                    $.ajax({
+                    url:"/thank",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+                pic4=document.getElementById("pic4");
+                pic4.addEventListener("click",bad)
+                function bad()
+                {
+                    name="bad"
+                    path="static/bad.png"
+                    s={name,path}
+                    $.ajax({
+                    url:"/thank",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+                pic5=document.getElementById("pic5");
+                pic5.addEventListener("click",worst)
+                function worst()
+                {
+                    name="worst"
+                    path="static/worst.png"
+                    s={name,path}
+                    $.ajax({
+                    url:"/thank",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+        </script>
     </body>
 </html>
