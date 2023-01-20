@@ -20,3 +20,9 @@
     color:gray;
     font-style: italic;
 }
+.img
+{
+    height:80px;
+    width:80px;
+    margin:10px;
+}

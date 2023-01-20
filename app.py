@@ -182,6 +182,30 @@ def storeFB():
     conn.commit()
 
     return render_template("thank.html")
+
+@app.route("/usersdb")
+def usersDb():
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from user")
+    data=cur.fetchall()
+    l=[]
+    for i in data:
+        dic={"username":i[0],"email":i[1],"password":i[2]}
+        l.append(dic)
+    return render_template("usersdb.html",data=l)
+
+@app.route("/feedbackdb")
+def feedbackDb():
+    conn=sql.connect("flames.db")
+    cur=conn.cursor()
+    cur.execute("select * from feedback")
+    data=cur.fetchall()
+    l=[]
+    for i in data:
+        dic={"username":i[0],"feedback":i[1],"emoji":i[2]}
+        l.append(dic)
+    return render_template("feedbackdb.html",data=l)
      
 
 if __name__=="__main__":
