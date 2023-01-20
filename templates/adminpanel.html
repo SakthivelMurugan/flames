@@ -7,8 +7,29 @@
     <body>
         <div class="flex">
             <h1 class="dark" id="head">admin panel</h1>
-            <a href="/usersdb"><h1 class="text" id="text1">show users details</h1></a>
-            <a href="/feedbackdb"><h1 class="text" id="text2">show feedbacks</h1></a>
+            <a href="/usersdb"><h1 class="text" id="text1" onmouseover="fun1()" onmouseout="fun2()">show users details</h1></a>
+            <a href="/feedbackdb"><h1 class="text" id="text2" onmouseover="fun3()" onmouseout="fun4()">show feedbacks</h1></a>
         </div>
+        <script>
+            text1=document.getElementById("text1");
+            function fun1()
+            {
+                text1.style.backgroundColor="gray";
+            }
+            function fun2()
+            {
+                text1.style.backgroundColor="teal";
+            }
+
+            text2=document.getElementById("text2");
+            function fun3()
+            {
+                text2.style.backgroundColor="gray";
+            }
+            function fun4()
+            {
+                text2.style.backgroundColor="teal";
+            }
+        </script>
     </body>
 </html>

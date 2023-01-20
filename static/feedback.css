@@ -37,13 +37,11 @@
     align-items: center;
     margin:10px;
 }
-
-
 .pic
 {
     height:100px;
     width:100px;
-    margin:20px;
+    margin:0px 20px;
 }
 
 .dark
@@ -51,11 +49,13 @@
     font-size: 50px;
     font-style: italic;
     color:khaki;
-    margin:30px;
+    margin-bottom:70px;
 }
 
 .text
 {
     color:pink;
     font-style:italic;
+    margin:0px;
+    font-size: 20px;
 }

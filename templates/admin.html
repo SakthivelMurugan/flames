@@ -8,10 +8,41 @@
         <div class="container">
             <form class="flex" method="post" action="/admin">
                 <h1 class="dark">Admin LogIn</h1>
-                <input class="input" name="username" id="un" placeholder="enter username" required="1"></input>
-                <input class="input" name="password" id="pw" placeholder="enter password" required="1"></input>
-                <button type="submit">login</button>
+                <input class="input" name="username" id="un" onmouseover="fun1()" onmouseout="fun2()"  placeholder="enter username" required="1"></input>
+                <input class="input" name="password" id="pw" onmouseover="fun3()" onmouseout="fun4()"  placeholder="enter password" required="1"></input>
+                <button type="submit" class="b" id="b" onmouseover="fun5()" onmouseout="fun6()">login</button>
             </form>
         </div>
     </body>
+    <script>
+        username=document.getElementById("un");
+        function fun1()
+        {
+            username.style.border="2px solid white";
+        }
+        function fun2()
+        {
+            username.style.border="2px solid teal";
+        }
+
+        password=document.getElementById("pw");
+        function fun3()
+        {
+            password.style.border="2px solid white";
+        }
+        function fun4()
+        {
+            password.style.border="2px solid teal";
+        }
+
+        b=document.getElementById("b");
+        function fun5()
+        {
+            b.style.border="2px solid aqua"
+        }
+        function fun6()
+        {
+            b.style.border="2px solid teal"
+        }
+    </script>
 </html>

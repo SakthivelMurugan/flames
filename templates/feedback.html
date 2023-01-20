@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>playlist</title>
+        <title>feedback</title>
         <link rel="stylesheet" href="static/feedback.css">
     </head>
     <body>
@@ -9,26 +9,26 @@
             <div class="flex">
                 <h1 class="dark">Give your feedback by clicking emoji</h1>
                 <div class="header">
-                    <div class="sflex">
-                        <a href=/thankpage><img class="pic" id="pic1" src="static/excellent.png"></img></a>
+                    <a href=/thankpage><div class="sflex"  id="pic1" onmouseover="fun1()" onmouseout="fun2()">
+                        <img class="pic" src="static/excellent.png"></img>
                         <h1 class="text">excellent</h1>
-                    </div>
-                    <div class="sflex">
-                        <a href=/thankpage><img class="pic" id="pic2" src="static/good.png"></img></a>
+                    </div></a>
+                    <a href=/thankpage><div class="sflex" id="pic2" onmouseover="fun3()" onmouseout="fun4()">
+                        <img class="pic" src="static/good.png"></img>
                         <h1 class="text">good</h1>
-                    </div>
-                    <div class="sflex">
-                        <a href=/thankpage><img class="pic" id="pic3" src="static/average.png"></img></a>
+                    </div></a>
+                    <a href=/thankpage><div class="sflex" id="pic3" onmouseover="fun5()" onmouseout="fun6()">
+                        <img class="pic" src="static/average.png"></img>
                         <h1 class="text">average</h1>
-                    </div>
-                    <div class="sflex">
-                        <a href=/thankpage><img class="pic" id="pic4" src="static/bad.png"></img></a>
+                    </div></a>
+                    <a href=/thankpage><div class="sflex" id="pic4" onmouseover="fun7()" onmouseout="fun8()">
+                        <img class="pic" src="static/bad.png"></img>
                         <h1 class="text">bad</h1>
-                    </div>
-                    <div class="sflex">
-                        <a href=/thankpage><img class="pic" id="pic5" src="static/worst.png"></img></a>
+                    </div></a>
+                    <a href=/thankpage><div class="sflex" id="pic5" onmouseover="fun9()" onmouseout="fun10()">
+                        <img class="pic" src="static/worst.png"></img>
                         <h1 class="text">worst</h1>
-                    </div>
+                    </div></a>
                 </div>
             </div>
         </div>
@@ -47,6 +47,15 @@
                     contentType: "application/json",
                     data: JSON.stringify(s)});
                 }
+                function fun1()
+                {
+                    pic1.style.backgroundColor="slategray";
+                }
+                function fun2()
+                {
+                    pic1.style.backgroundColor="teal";
+                }
+
                 pic2=document.getElementById("pic2");
                 pic2.addEventListener("click",good)
                 function good()
@@ -60,6 +69,15 @@
                     contentType: "application/json",
                     data: JSON.stringify(s)});
                 }
+                function fun3()
+                {
+                    pic2.style.backgroundColor="slategray";
+                }
+                function fun4()
+                {
+                    pic2.style.backgroundColor="teal";
+                }
+
                 pic3=document.getElementById("pic3");
                 pic3.addEventListener("click",average)
                 function average()
@@ -73,6 +91,16 @@
                     contentType: "application/json",
                     data: JSON.stringify(s)});
                 }
+
+                function fun5()
+                {
+                    pic3.style.backgroundColor="slategray";
+                }
+                function fun6()
+                {
+                    pic3.style.backgroundColor="teal";
+                }
+
                 pic4=document.getElementById("pic4");
                 pic4.addEventListener("click",bad)
                 function bad()
@@ -86,6 +114,16 @@
                     contentType: "application/json",
                     data: JSON.stringify(s)});
                 }
+
+                function fun7()
+                {
+                    pic4.style.backgroundColor="slategray";
+                }
+                function fun8()
+                {
+                    pic4.style.backgroundColor="teal";
+                }
+
                 pic5=document.getElementById("pic5");
                 pic5.addEventListener("click",worst)
                 function worst()
@@ -98,6 +136,14 @@
                     type:"POST",
                     contentType: "application/json",
                     data: JSON.stringify(s)});
+                }
+                function fun9()
+                {
+                    pic5.style.backgroundColor="slategray";
+                }
+                function fun10()
+                {
+                    pic5.style.backgroundColor="teal";
                 }
         </script>
     </body>

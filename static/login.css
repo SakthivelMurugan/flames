@@ -5,7 +5,7 @@
 	justify-content:center;
 	align-items:center;
 	width:100%;
-	height:605px;
+	height:610px;
     background-color:slategray;
 }
 .flex
@@ -22,6 +22,7 @@
 .input
 {
     margin:10px;
+	text-align: center;
 }
 .dark
 {
@@ -34,4 +35,11 @@
 .but
 {
 	color:aqua;
+}
+.b
+{
+	background-color: aqua;
+	border-radius:30%;
+	border:2px solid aqua;
+	color:teal;
 }

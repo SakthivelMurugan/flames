@@ -34,3 +34,10 @@
 {
 	color:aqua;
 }
+.b
+{
+	background-color: aqua;
+	border-radius:30%;
+	border:2px solid aqua;
+	color:teal;
+}

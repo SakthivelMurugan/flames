@@ -8,12 +8,53 @@
         <div class="container">
             <form class="flex" method="post" action="/">
                 <h1 class="dark">SignUp</h1>
-                <input class="input" name="username" id="un" required="1" placeholder="enter username"></input>
-                <input class="input" name="email" id="em" required="1" placeholder="enter email"></input>
-                <input class="input" name="password" id="pw" required="1" placeholder="enter password"></input>
-                <button type="submit">create</button>
+                <input class="input" name="username" id="un" onmouseover="fun1()" onmouseout="fun2()" id="un" required="1" placeholder="enter username"></input>
+                <input class="input" name="email" id="em" onmouseover="fun3()" onmouseout="fun4()" id="em" required="1" placeholder="enter email"></input>
+                <input class="input" name="password" id="pw" onmouseover="fun5()" onmouseout="fun6()" id="pw" required="1" placeholder="enter password"></input>
+                <button type="submit" class="b" onmouseover="fun7()" onmouseout="fun8()" id="b">create</button>
                 <h5 class="text">already have an account? <a href="/" class="but">LogIn</a></h5>
             </form>
         </div>
     </body>
+    <script>
+        username=document.getElementById("un");
+        function fun1()
+        {
+            username.style.border="2px solid white";
+        }
+        function fun2()
+        {
+            username.style.border="2px solid teal";
+        }
+
+        email=document.getElementById("em");
+        function fun3()
+        {
+            email.style.border="2px solid white";
+        }
+        function fun4()
+        {
+            email.style.border="2px solid teal";
+        }
+
+        password=document.getElementById("pw");
+        function fun5()
+        {
+            password.style.border="2px solid white";
+        }
+        function fun6()
+        {
+            password.style.border="2px solid teal";
+        }
+
+        b=document.getElementById("b");
+        function fun7()
+        {
+            b.style.border="2px solid aqua"
+        }
+        function fun8()
+        {
+            b.style.border="2px solid teal"
+        }
+    </script>
 </html>

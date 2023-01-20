@@ -8,12 +8,43 @@
         <div class="container">
             <form class="flex" method="post" action="/home">
                 <h1 class="dark">User LogIn</h1>
-                <input class="input" name="username" id="un" placeholder="enter username" required="1"></input>
-                <input class="input" name="password" id="pw" placeholder="enter password" required="1"></input>
-                <button type="submit">login</button>
+                <input class="input" name="username" id="un" onmouseover="fun1()" onmouseout="fun2()" placeholder="enter username" required="1"></input>
+                <input class="input" name="password" id="pw" onmouseover="fun3()" onmouseout="fun4()" placeholder="enter password" required="1"></input>
+                <button type="submit" class="b" id="b" onmouseover="fun5()" onmouseout="fun6()">login</button>
                 <h5 class="text">don't have an account? <a href="/signup" class="but">SignUp</a></h5>
                 <a href="/adminlogin" class="but">AdminLogin</a>
             </form>
         </div>
     </body>
+    <script>
+        username=document.getElementById("un");
+        function fun1()
+        {
+            username.style.border="2px solid white";
+        }
+        function fun2()
+        {
+            username.style.border="2px solid teal";
+        }
+
+        password=document.getElementById("pw");
+        function fun3()
+        {
+            password.style.border="2px solid white";
+        }
+        function fun4()
+        {
+            password.style.border="2px solid teal";
+        }
+
+        b=document.getElementById("b");
+        function fun5()
+        {
+            b.style.border="2px solid aqua"
+        }
+        function fun6()
+        {
+            b.style.border="2px solid teal"
+        }
+    </script>
 </html>

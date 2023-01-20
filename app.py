@@ -191,7 +191,7 @@ def usersDb():
     data=cur.fetchall()
     l=[]
     for i in data:
-        dic={"username":i[0],"email":i[1],"password":i[2]}
+        dic={"username":i[0],"email":i[1]}
         l.append(dic)
     return render_template("usersdb.html",data=l)
 

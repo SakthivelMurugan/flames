@@ -8,7 +8,7 @@
         <div class="container">
             <div class="profile">
                 <h1 class="text">{{username}}</h1>
-                <img class="pic" src="static/profile.jpg">
+                <img class="pic" id="pic" src="static/profile.jpg" onmouseover="fun13()" onmouseout="fun14()">
             </div>
             <div class="flex">
                 <div class="header">
@@ -22,7 +22,7 @@
                 <h1 class="dark">flames</h1>
                 <a href="/play"><button class="but" id="but" onmouseover="funone()" onmouseout="funtwo()">play game</button></a>
                 <a href="/playList"><button class="but" id="but1" onmouseover="funthree()" onmouseout="funfour()">play list</button></a>
-                <a href="/feedBack"><img class="fb" id="fb" src="static/feedback.jpg"></img></a>
+                <a href="/feedBack"><img class="fb" id="fb" src="static/feedback.jpg" onmouseover="funfive()" onmouseout="funsix()"></img></a>
             </div>
         </div>
         <script>
@@ -46,6 +46,26 @@
                 b.style.border="2px solid teal";
             }
 
+
+            b=document.getElementById("but1");
+            function funthree()
+            {
+                b.style.border="2px solid white";
+            } 
+            function funfour()
+            {
+                b.style.border="2px solid teal";
+            }
+            fb=document.getElementById("fb");
+            function funfive()
+            {
+                fb.style.border="2px solid white"
+            } 
+            function funsix()
+            {
+                fb.style.border="2px solid teal";
+            }
+
             pic1=document.getElementById("pic1");
             function fun1()
             {
@@ -55,7 +75,7 @@
             {
                 pic1.style.border="2px solid teal";
             }
-
+            
             pic2=document.getElementById("pic2");
             function fun3()
             {
@@ -104,6 +124,24 @@
             function fun12()
             {
                 pic6.style.border="2px solid teal";
+            }
+
+            pic=document.getElementById("pic");
+            function fun13()
+            {
+                pic.style.border="2px solid white";
+            } 
+            function fun14()
+            {
+                pic.style.border="2px solid teal";
+            }
+            function fun14()
+            {
+                pic.style.border="2px solid white";
+            } 
+            function fun14()
+            {
+                pic.style.border="2px solid teal";
             }
 
 
