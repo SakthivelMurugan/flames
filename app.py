@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for,flash
+from flask import Flask,render_template,request,redirect,url_for,flash,get_flashed_messages
 import sqlite3 as sql
 import json
 
@@ -26,7 +26,7 @@ def logIn():
             if i==username:
                 flash("user already exist")
                 return redirect(url_for("signUp"))
-        flash("user registered successfully")
+        flash("user registered successfully login here")
         cur.execute("insert into user (username,email,password) values (?,?,?)",(username,email,password))
         conn.commit()
 
@@ -72,6 +72,7 @@ def home():
             return render_template("index.html",username=username)
     
     else:
+        flash("check username and password")
         return redirect(url_for("logIn"))
 
 @app.route("/play")

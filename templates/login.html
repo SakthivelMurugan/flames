@@ -6,6 +6,13 @@
     </hea>
     <body>
         <div class="container">
+            {%with messages=get_flashed_messages()%}
+                {% if messages %}
+                    {%for i in messages%}
+                        <p class="text">{{i}}</p>
+                    {%endfor%}
+                {%endif%}
+            {%endwith%}
             <form class="flex" method="post" action="/home">
                 <h1 class="dark">User LogIn</h1>
                 <input class="input" name="username" id="un" onmouseover="fun1()" onmouseout="fun2()" placeholder="enter username" required="1"></input>
