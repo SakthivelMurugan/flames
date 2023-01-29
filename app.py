@@ -24,7 +24,7 @@ def logIn():
 
         for i in l:
             if i==username:
-                flash("user already exist")
+                flash("username already exist")
                 return redirect(url_for("signUp"))
         flash("user registered successfully login here")
         cur.execute("insert into user (username,email,password) values (?,?,?)",(username,email,password))
@@ -93,6 +93,15 @@ def playList():
     data1=cur.fetchall()
 
     return render_template("playlist.html",data=data1)
+
+@app.route("/remove/<username>,<yourname>,<crushname>")
+def Remove(username,yourname,crushname):
+    conn=sql.connect("flames.db")
+    conn.row_factory=sql.Row
+    cur=conn.cursor()
+    cur.execute("delete from playlist where username=? and yourname=? and crushname=?",(username,yourname,crushname))
+    conn.commit()
+    return redirect(url_for('playList'))
 
 @app.route("/output",methods=["post","get"])
 def outPut():
