@@ -16,7 +16,10 @@
 }
 .text
 {
-    color:white;
+    color:teal;
+    background-color: white;
     font-size: 40px;
     font-style:italic;
+    margin:10px;
+    border:2px solid white;
 }

@@ -6,17 +6,20 @@
     </head>
     <body>
         <div class="flex">
+            <h1 class="dark">FEEDBACKS</h1>
             <table>
                 <tr>
-                    <th><h1 class="dark">username</h1></th>
-                    <th><h1 class="dark">feedback</h1></th>
-                    <th><h1 class="dark">emoji</h1></th>
+                    <th><h1 class="dark">USERNAME</h1></th>
+                    <th><h1 class="dark">FEEDBACK</h1></th>
+                    <th><h1 class="dark">EMOJI</h1></th>
+                    <th><h1 class="dark">EDIT</h1></th>
                 </tr>
                 {%for i in data%}
                 <tr>
                     <td><h1 class="text">{{i.username}}</h1></td>
                     <td><h1 class="text">{{i.feedback}}</h1></td>
                     <td><img class="img" src={{i.emoji}}></td>
+                    <td><a href="{{url_for('removeFB',username=i.username,feedback=i.feedback)}}"><button class="red">remove</button></a></td>
                 </tr>
                 {%endfor%}
             </table>

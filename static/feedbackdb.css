@@ -26,3 +26,9 @@
     width:80px;
     margin:10px;
 }
+.red
+{
+    background-color: red;
+    border:2px solif red;
+    margin:25px;
+}

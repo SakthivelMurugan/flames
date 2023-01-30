@@ -1,34 +1,34 @@
 <!DOCTYPE html> 
 <html>
     <hea>
-        <title>login</title>
+        <title>admin panel</title>
         <link href="static/adminpanel.css" rel="stylesheet">
     </hea>
     <body>
         <div class="flex">
-            <h1 class="dark" id="head">admin panel</h1>
-            <a href="/usersdb"><h1 class="text" id="text1" onmouseover="fun1()" onmouseout="fun2()">show users details</h1></a>
-            <a href="/feedbackdb"><h1 class="text" id="text2" onmouseover="fun3()" onmouseout="fun4()">show feedbacks</h1></a>
+            <h1 class="dark" id="head">ADMIN PANEL</h1>
+            <a href="/usersdb"><button class="text" id="text1" onmouseover="fun1()" onmouseout="fun2()">users details</button></a>
+            <a href="/feedbackdb"><button class="text" id="text2" onmouseover="fun3()" onmouseout="fun4()">feedbacks</button></a>
         </div>
         <script>
             text1=document.getElementById("text1");
             function fun1()
             {
-                text1.style.backgroundColor="gray";
+                text1.style.border='3px solid white';
             }
             function fun2()
             {
-                text1.style.backgroundColor="teal";
+                text1.style.border='3px solid teal';
             }
 
             text2=document.getElementById("text2");
             function fun3()
             {
-                text2.style.backgroundColor="gray";
+                text2.style.border='3px solid white';
             }
             function fun4()
             {
-                text2.style.backgroundColor="teal";
+                text2.style.border='3px solid teal';
             }
         </script>
     </body>

@@ -205,6 +205,16 @@ def usersDb():
         l.append(dic)
     return render_template("usersdb.html",data=l)
 
+@app.route("/removeUser/<username>")
+def removeUser(username):
+    conn=sql.connect("flames.db")
+    conn.row_factory=sql.Row
+    cur=conn.cursor()
+    cur.execute("delete from user where username=?",(username,))
+    conn.commit()
+
+    return redirect(url_for("usersDb"))
+
 @app.route("/feedbackdb")
 def feedbackDb():
     conn=sql.connect("flames.db")
@@ -216,6 +226,16 @@ def feedbackDb():
         dic={"username":i[0],"feedback":i[1],"emoji":i[2]}
         l.append(dic)
     return render_template("feedbackdb.html",data=l)
+
+@app.route("/removeFB/<username>,<feedback>")
+def removeFB(username,feedback):
+    conn=sql.connect("flames.db")
+    conn.row_factory=sql.Row
+    cur=conn.cursor()
+    cur.execute("delete from feedback where username=? and feedback=?",(username,feedback))
+    conn.commit()
+    return redirect(url_for("feedbackDb"))
+
      
 
 if __name__=="__main__":

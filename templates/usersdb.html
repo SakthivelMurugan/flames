@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>feedback</title>
+        <title>users details</title>
         <link rel="stylesheet" href="/static/usersdb.css">
     </head>
     <body>
         <div class="flex">
+            <h1 class="dark">USERS DETAILS</h1>
+            <a class="text" href="/signup"><button class="green">addUser</button></a>
             <table>
                 <tr>
-                    <th><h1 class="dark">username</h1></th>
-                    <th><h1 class="dark">email</h1></th>
+                    <th><h1 class="dark">USERNAME</h1></th>
+                    <th><h1 class="dark">EMAIL</h1></th>
+                    <th><h1 class="dark">EDIT</h1></th>
                 </tr>
                 {%for i in data%}
                 <tr>
                     <td><h1 class="text">{{i.username}}</h1></td>
                     <td><h1 class="text">{{i.email}}</h1></td>
+                    <td><a class="text" href="/removeUser/{{i.username}}"><button class="red">remove</button></a></td>
                 </tr>
                 {%endfor%}
             </table>
